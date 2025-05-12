@@ -9,12 +9,8 @@ pip install autoupdate-languages2
 ```
 
 ## Usage
-> ONLY `.txt` FILE IS AVAILABLE AS OUTPUT AT THIS TIME!
 
-<details>
-<summary>
 To run the package as a background task in general or in your application (click to expand)
-</summary>
 
 ```python
 from autoupdate_languages2 import AutoUpdateLanguages2
@@ -30,13 +26,8 @@ if __name__ == '__main__':
   auto_update_langs.start()
 ```
 
-</details>
-
-
-<details>
-<summary>
 To use the package as an api call to create a file within the current directory of where your file was executed from (click to expand)
-</summary>
+> ONLY `.txt` FILE IS AVAILABLE AS OUTPUT AT THIS TIME!
 
 ```python
 from autoupdate_languages2 import AutoUpdateLanguages2
@@ -53,12 +44,7 @@ def create_lang_list_file():
 create_lang_list_file()
 ```
 
-</details>
-
-<details>
-<summary>
 To use the python package as an api call to get the list of known programming languages (click to expand)
-</summary>
 
 > Be careful with how often you query this as this does a fresh webscrape on each query.
 > It is best to use the `.generate_file(file_path)` method to generate the file one time
@@ -72,8 +58,6 @@ auto_update_langs = AutoUpdateLanguages2()
 
 lang_list = auto_update_langs.get_lang_list()
 ```
-
-</details>
 
 ## Features
 - Automatically updates language list monthly
