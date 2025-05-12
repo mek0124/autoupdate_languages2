@@ -4,16 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autoupdate-languages2"
-version = "1.0.3"
+version = "1.0.4"
 authors = [
   { name="mek0124", email="mek0124@proton.me" },
 ]
 description = "Automatically updates and maintains a list of programming languages"
 readme = "README.md"
 requires-python = ">=3.7"
+license = {file = "LICENSE.txt"}
 classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
+  "License :: OSI Approved :: Apache Software License",
 ]
 dependencies = [
   "beautifulsoup4==4.13.3",
@@ -29,4 +31,4 @@ dependencies = [
 ]
 
 [project.scripts]
-autoupdate-languages = "autoupdate_languages.core:AutoUpdateLanguages"
+autoupdate-languages = "autoupdate_languages2.core:AutoUpdateLanguages2"
