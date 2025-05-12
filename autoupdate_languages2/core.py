@@ -9,7 +9,7 @@ import os
 class AutoUpdateLanguages2:
     def __init__(self):
         self.day_count = 1
-        self.exp_days = 30
+        self.exp_days = 90
         self.delay = 86400  # 1 day in seconds
         self.url = "https://programminglanguages.info/languages/"
 
