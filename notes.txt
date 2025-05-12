@@ -1,5 +1,0 @@
-Need To Fix:
-  - project outputs lang.txt file inside of .env/lib64/python3.12/site-packages/autoupdate_languages directory instead of actual project directory for user
-
-Need To Add
-  - robots.txt check
