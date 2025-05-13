@@ -172,5 +172,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-autoupdate_languages/project_output
 codebase.md
