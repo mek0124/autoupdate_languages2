@@ -1,7 +1,9 @@
 from datetime import datetime
 from bs4 import BeautifulSoup
 from typing import Optional
-import requests
+from urllib.robotparser import RobotFileParser
+
+import urllib.request
 import asyncio
 import os
 
@@ -85,13 +87,30 @@ class AutoUpdateLanguages2:
     
     async def get_lang_list(self):
         """Scrape the website for programming languages list"""
-        try:
-            response = requests.get(self.url, timeout=10)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.content, 'html5lib')
+
+        url = self.url
+
+        rp = RobotFileParser()
+        rp.set_url(url + "/robots.txt")
+        rp.read()
+
+        if rp.can_fetch("*", url):
+            site = urllib.request.urlopen(url)
+            sauce = site.read()
+            soup = BeautifulSoup(sauce, "html.parser")
             return soup.find_all("ul", {"class": "column-list"})
-        except requests.RequestException as e:
-            raise RuntimeError(f"Failed to fetch languages: {e}")
+        
+        print("rp couldn't read")
+
+        """ Original Code """
+        # import requests
+        # try:
+        #     response = requests.get(self.url, timeout=10)
+        #     response.raise_for_status()
+        #     soup = BeautifulSoup(response.content, 'html5lib')
+        #     return soup.find_all("ul", {"class": "column-list"})
+        # except requests.RequestException as e:
+        #     raise RuntimeError(f"Failed to fetch languages: {e}")
 
 
 if __name__ == '__main__':
