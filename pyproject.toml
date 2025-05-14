@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autoupdate-languages2"
-version = "1.0.4"
+version = "1.1.4"
 authors = [
   { name="mek0124", email="mek0124@proton.me" },
 ]
