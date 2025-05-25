@@ -85,8 +85,8 @@ async def test_get_lang_list():
     mock_response = MagicMock()
     mock_response.read.return_value = fake_html.encode('utf-8')
     
-    with patch("autoupdate_languages2.core.RobotFileParser", return_value=mock_robot_parser), \
-         patch("autoupdate_languages2.core.urllib.request.urlopen", return_value=mock_response):
+    with patch("app.core.RobotFileParser", return_value=mock_robot_parser), \
+         patch("app.core.urllib.request.urlopen", return_value=mock_response):
         
         ul_elements = await updater.get_lang_list()
         
