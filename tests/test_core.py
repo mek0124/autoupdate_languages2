@@ -2,7 +2,7 @@ import pytest
 import asyncio
 import os
 from unittest.mock import patch, MagicMock
-from autoupdate_languages2.core import AutoUpdateLanguages2
+from app.core import AutoUpdateLanguages2
 from pathlib import Path
 
 
