@@ -31,4 +31,4 @@ dependencies = [
 ]
 
 [project.scripts]
-autoupdate-languages = "autoupdate_languages2.core:AutoUpdateLanguages2"
+autoupdate-languages = "app.core:AutoUpdateLanguages2"
