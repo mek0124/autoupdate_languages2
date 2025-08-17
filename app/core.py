@@ -61,6 +61,7 @@ class AutoUpdateLanguages2:
 
         while self.day_count < self.exp_days:
             remaining_days = self.exp_days - self.day_count
+            next_month = str(next_month.__format__('%m/%d/%Y HH:MM:SS')).split(" ")[0]
             print(f"Day #{self.day_count}) File Update In {remaining_days} days on {next_month}")
             
             await asyncio.sleep(self.delay)
@@ -74,7 +75,7 @@ class AutoUpdateLanguages2:
         try:
             next_month = datetime(
                 today.year,
-                today.month + 1,
+                today.month + 3,
                 today.day
             )
         except ValueError:
