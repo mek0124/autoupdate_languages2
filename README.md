@@ -60,6 +60,6 @@ lang_list = auto_update_langs.get_lang_list()
 ```
 
 ## Features
-- Automatically updates language list monthly
+- Automatically updates language list every 90 days
 - Lightweight and easy to use
 
