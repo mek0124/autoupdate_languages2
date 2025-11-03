@@ -1,5 +1,9 @@
 # AutoUpdate Languages 2
 
+> NOTE: PROJECT DISABLED UNTIL FURTHER NOTICE - 11/2/2025
+
+> NOTE: At this time, this program uses a preset list of programming languages and does not have an active schedular extension. This is because I have not found a website that current maintains a list of programming langauges that the robots.txt file will allow me to scrape. If anyone knows of one, please create a new issue on the issues tab
+
 An asynchronous python package that maintains an updated list of programming languages by scraping [Programming Languages](programminglanguages.info) every 90 days. This application is designed to be a background task loop and is ran asynchrounously.
 
 ## Installation
