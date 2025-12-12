@@ -1,69 +1,48 @@
-# AutoUpdate Languages 2
+<label id="top"></label>
 
-> NOTE: PROJECT DISABLED UNTIL FURTHER NOTICE - 11/2/2025
+<div align="center">
+  <h1>Programming Languages Dictionary</h1>
+  <h3>Formerly Known: AutoUpdate Languages 2</h3>
+</div>
 
-> NOTE: At this time, this program uses a preset list of programming languages and does not have an active schedular extension. This is because I have not found a website that current maintains a list of programming langauges that the robots.txt file will allow me to scrape. If anyone knows of one, please create a new issue on the issues tab
+Table of Contents:
 
-An asynchronous python package that maintains an updated list of programming languages by scraping [Programming Languages](programminglanguages.info) every 90 days. This application is designed to be a background task loop and is ran asynchrounously.
+- [Introduction](#introduction)
+- [Installation](#installation)
 
-## Installation
+---
 
-```bash
-pip install autoupdate-languages2
-```
+### Introduction
 
-## Usage
+<u><i>Programming Languages Dictionary</i></u> is a PySide6 application that utilizes Python's [requests](https://pypi.org/project/requests/) and [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/) libraries to scrape, build, and display a list of all currently known programming languages, esoterik included.
 
-To run the package as a background task in general or in your application
+---
 
-```python
-from autoupdate_languages2 import AutoUpdateLanguages2
+### Installation
 
+At this time, this project is currently built and compiled for Linux/Mac, using bash, as that is the current active development environment. In future dates, Windows options will become available.
 
-if __name__ == '__main__':
-  # Direct Call to the start method to start the loop
-  AutoUpdateLanguages2().start()
+<b><u>To Compile From Source</u></b>
 
-  # OOP call
-  auto_update_langs = AutoUpdateLanguages2()
-  # call the start method to start the loop
-  auto_update_langs.start()
-```
+1. Clone the repo
+  - `git clone https://github.com/mek0124/programming-languages-dictionary.git`
 
-To use the package as an api call to create a file within the current directory of where your file was executed from
-> ONLY `.txt` FILE IS AVAILABLE AS OUTPUT AT THIS TIME!
+2. CD into the project
+  - `cd programming-languages-dictionary`
 
-```python
-from autoupdate_languages2 import AutoUpdateLanguages2
-import os
+3. Run the project via the scripts/run.sh file or with python3
+  - `bash scripts/run.sh` or with `python3 main.py`
 
-def create_lang_list_file():
-  curr_dir = os.path.abspath(os.path.dirname(__file__)) # current path of where this file was executed
-  output_dir = os.path.join(curr_dir, "output") # add the output dir './output/
-  output_file = os.path.join(output_dir, "lang_list.txt") # add the desired file to the path -> only .txt works at this time
+<b><u>To Run From .AppImage</u></b>
 
-  auto_update_langs = AutoUpdateLanguages2()
-  all_langs = auto_update_langs.generate_file(output_file)
+1. Download the latest release from the releases page
+  - https://github.com/mek0124/programming-languages-dictionary/releases/latest
 
-create_lang_list_file()
-```
+2. Unzip the project with 7zip or Tar
+  - `7z x programming-languages-dictionaryv1.0.0.tar.gz` or `tar -xvzf programming-languages-dictionaryv1.0.0.tar.gz`
 
-To use the python package as an api call to get the list of known programming languages
-
-> Be careful with how often you query this as this does a fresh webscrape on each query.
-> It is best to use the `.generate_file(file_path)` method to generate the file one time
-> and then work with the data from there!
-
-
-```python
-from autoupdate_languages2 import AutoUpdateLanguages2
-
-auto_update_langs = AutoUpdateLanguages2()
-
-lang_list = auto_update_langs.get_lang_list()
-```
-
-## Features
-- Automatically updates language list every 90 days
-- Lightweight and easy to use
-
+3. CD into the project
+  - `cd programming-languages-dictionaryv1.0.0` 
+  
+4. Run the .AppImage
+  - `./dist/programming-languages-dictionary`
