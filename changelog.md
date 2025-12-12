@@ -1,6 +1,7 @@
 ## Prgramming Languages Dictionary - Changelog
 
 ### [v0.2.0]
+  - updated main.py to incorporate querying environment file
   - updated requirements.txt
   - generated LICENSE.txt file
   - generated Icons_rc.py file for app icon usage within .ui files
