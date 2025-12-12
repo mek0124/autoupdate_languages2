@@ -1,8 +1,17 @@
 from PySide6.QtWidgets import QApplication, QMessageBox
+from dotenv import load_dotenv
 from pathlib import Path
+
+from app.app import ProgrammingLanguagesDictionary
+from app.services.scraper import Scraper
 
 import sys
 import os
+
+
+load_dotenv()
+
+SCRAPE_URL = os.getenv("SCRAPE_URL", "")
 
 
 def get_agreement(root_dir: Path) -> bool:
@@ -53,7 +62,7 @@ def check_permissions(root_dir: Path) -> bool:
         print(f"Unknown Exception Reading UA File: {e}")
         return False
     
-def start(root_dir: Path) -> None:
+def start(root_dir: Path, scraper: Scraper) -> None:
     app = QApplication(sys.argv)
 
     did_agree = check_permissions(root_dir)
@@ -64,9 +73,14 @@ def start(root_dir: Path) -> None:
         if not user_agreed:
             sys.exit(0)
 
+    window = ProgrammingLanguagesDictionary(root_dir, scraper)
+    window.show()
+
     sys.exit(app.exec())
 
 
 if __name__ == '__main__':
     root_dir = Path(__file__).parent
-    start(root_dir)
+    scraper = Scraper(SCRAPE_URL)
+
+    start(root_dir, scraper)
