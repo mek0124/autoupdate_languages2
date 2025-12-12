@@ -52,10 +52,8 @@ def check_permissions(root_dir: Path) -> bool:
     except Exception as e:
         print(f"Unknown Exception Reading UA File: {e}")
         return False
-
-
-if __name__ == '__main__':
-    root_dir = Path(__file__).parent
+    
+def start(root_dir: Path) -> None:
     app = QApplication(sys.argv)
 
     did_agree = check_permissions(root_dir)
@@ -67,3 +65,8 @@ if __name__ == '__main__':
             sys.exit(0)
 
     sys.exit(app.exec())
+
+
+if __name__ == '__main__':
+    root_dir = Path(__file__).parent
+    start(root_dir)
