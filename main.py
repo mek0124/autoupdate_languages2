@@ -81,6 +81,6 @@ def start(root_dir: Path, scraper: Scraper) -> None:
 
 if __name__ == '__main__':
     root_dir = Path(__file__).parent
-    scraper = Scraper(SCRAPE_URL)
+    scraper = Scraper(root_dir)
 
     start(root_dir, scraper)
