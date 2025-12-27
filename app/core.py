@@ -1,9 +1,9 @@
 from typing import Optional
 
-from app.config import Config
-from app.file_manager import FileManager
-from app.schedular import Schedular
-from app.scraper import Scraper
+from config import Config
+from file_manager import FileManager
+from schedular import Schedular
+from scraper import Scraper
 
 import asyncio
 
